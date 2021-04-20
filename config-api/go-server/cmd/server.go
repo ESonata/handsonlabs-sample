@@ -50,7 +50,7 @@ func setConfigByAPI() {
 	providerConfig := config.NewProviderConfig(
 		config.WithProviderAppConfig(config.NewDefaultApplicationConfig()),
 		config.WithProviderProtocol("dubbo", "dubbo", "20000"),
-		config.WithProviderRegistry("demoZk", config.NewRegistryConfig(config.WithRegistryProtocol("nacos"), config.WithRegistryAddress("127.0.0.1:65001"), config.WithRegistryTimeOut("3s"))),
+		config.WithProviderRegistry("demoZk", config.NewDefaultRegistryConfig("zookeeper")),
 		config.WithProviderServices("UserProvider", config.NewServiceConfigByAPI(
 			config.WithServiceRegistry("demoZk"),
 			config.WithServiceProtocol("dubbo"),
